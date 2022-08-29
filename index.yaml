@@ -1,0 +1,48 @@
+apiVersion: v1
+entries:
+  helloworld:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-08-29T14:15:18.825118359+08:00"
+    description: A Helm chart for Kubernetes
+    digest: cc2dd589929e710fdfe90e37ec73b044b0291eceb26ac5ad67aef10b73daf119
+    name: helloworld
+    type: application
+    urls:
+    - https://github.com/heidaodageshiwo/helm-chart/helloworld-0.1.0.tgz
+    version: 0.1.0
+  nginx:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 1.23.1
+    created: "2022-08-29T14:15:18.85567476+08:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: NGINX Open Source is a web server that can be also used as a reverse
+      proxy, load balancer, and HTTP cache. Recommended for high-demanding sites due
+      to its ability to provide faster content.
+    digest: 797927476f246a64c6bc9e7491cea75991251dcb82beddddce372282c03af333
+    home: https://github.com/bitnami/charts/tree/master/bitnami/nginx
+    icon: https://bitnami.com/assets/stacks/nginx/img/nginx-stack-220x234.png
+    keywords:
+    - nginx
+    - http
+    - web
+    - www
+    - reverse proxy
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: nginx
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/nginx
+    - https://www.nginx.org
+    urls:
+    - https://github.com/heidaodageshiwo/helm-chart/test/nginx-13.1.7.tgz
+    version: 13.1.7
+generated: "2022-08-29T14:15:18.822210477+08:00"
