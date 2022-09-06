@@ -17,3 +17,21 @@ myrepo/nginx            13.1.7          1.23.1          NGINX Open Source is a w
 ![c51d6917f82b751126cce9ebba14685](https://user-images.githubusercontent.com/29905182/187143154-95c8cbde-54a7-4d59-be07-2c22725e4410.jpg)
 
 
+
+## 更新
+
+[root@master test]#   helm search  repo myrepo
+NAME                    CHART VERSION   APP VERSION     DESCRIPTION                                       
+myrepo/helloworld       0.1.0           1.16.0          A Helm chart for Kubernetes                       
+myrepo/nginx            13.1.7          1.23.1          NGINX Open Source is a web server that can be a...
+[root@master test]# helm repo update
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "myrepo" chart repository
+Update Complete. ⎈Happy Helming!⎈
+[root@master test]#   helm search  repo myrepo
+NAME                    CHART VERSION   APP VERSION     DESCRIPTION                                       
+myrepo/helloworld       0.1.0           1.16.0          A Helm chart for Kubernetes                       
+myrepo/nacos            0.1.5           1.0             A Helm chart for Kubernetes                       
+myrepo/nginx            13.1.7          1.23.1          NGINX Open Source is a web server that can be a...
+[root@master test]# 
+
