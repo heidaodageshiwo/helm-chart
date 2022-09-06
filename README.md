@@ -1,7 +1,10 @@
 # helm-chart
 
-#张强仓库 添加方式：
+## 张强仓库 添加方式：
+
+
 helm repo add myrepo  https://heidaodageshiwo.github.io/helm-chart
+
 
 使用方式：
 [root@master ~]# helm search repo myrepo
