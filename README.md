@@ -32,6 +32,7 @@ helm search  repo myrepo
 
 ![image](https://user-images.githubusercontent.com/29905182/188583345-8437d05b-98e4-4a2b-b473-5e6089a709a1.png)
 
+## nacos官方提供的helm安装之后是各种注册不进去，各种访问不了的。我做了改进。
 
 ## 1、nacos安装(2.1)
 ```bash
@@ -278,3 +279,83 @@ INSERT INTO users (username, password, enabled) VALUES ('nacos', '$2a$10$EuWPZHz
 INSERT INTO roles (username, role) VALUES ('nacos', 'ROLE_ADMIN');
  ```
 
+
+
+## 1.2、 nacos 安装（个人自行修改nacos数据库配置）
+```bash
+[root@master test]# ls
+nacos  nacos-0.1.5.tgz
+[root@master test]# helm install nacos ./nacos
+NAME: nacos
+LAST DEPLOYED: Tue Sep  6 16:25:13 2022
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+1. Get the application URL by running these commands:
+  export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services  nacos-cs)
+  export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+  echo http://$NODE_IP:$NODE_PORT/nacos
+2. MODE:
+   standalone: you need to modify replicaCount in the values.yaml, .Values.replicaCount=1
+   cluster: kubectl scale sts default-nacos --replicas=3
+[root@master test]# 
+
+ ```
+
+
+
+
+
+## 1.3、 重点：（请执行当前文件夹下的node.yaml把nacos的地址代理出来，以后代码连接nacos就连接31000这个端口即可）
+```bash
+[root@master nacos]# kubectl apply -f node.yaml 
+service/service-nacos-0 created
+service/service-nacos-1 created
+[root@master nacos]# kubectl get all
+NAME                                          READY   STATUS    RESTARTS       AGE
+pod/nacos-0                                   1/1     Running   0              4m1s
+pod/nfs-client-provisioner-7f48dbb75b-jgj4k   1/1     Running   18 (53m ago)   13d
+
+NAME                      TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                                                       AGE
+service/kubernetes        ClusterIP   10.96.0.1        <none>        443/TCP                                                       13d
+service/nacos-cs          NodePort    10.105.124.118   <none>        8848:32495/TCP,9848:31112/TCP,9849:32498/TCP,7848:30000/TCP   4m1s
+service/service-nacos-0   NodePort    10.102.172.245   <none>        8848:31000/TCP,9848:32000/TCP                                 7s
+service/service-nacos-1   NodePort    10.108.24.135    <none>        8848:31001/TCP,9848:32001/TCP                                 7s
+
+NAME                                     READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nfs-client-provisioner   1/1     1            1           13d
+
+NAME                                                DESIRED   CURRENT   READY   AGE
+replicaset.apps/nfs-client-provisioner-7f48dbb75b   1         1         1       13d
+
+NAME                     READY   AGE
+statefulset.apps/nacos   1/1     4m1s
+[root@master nacos]# 
+
+ ```
+ ![image](https://user-images.githubusercontent.com/29905182/188586592-1212f80f-4bfc-406a-af3a-7cd5f27bd157.png)
+
+ 
+## 1.4、 重点：（请执行当前文件夹下的node.yaml把nacos的地址代理出来）
+```bash
+ ```
+ 
+## 1.5、 重点：（请执行当前文件夹下的node.yaml把nacos的地址代理出来）
+```bash
+ ```
+ 
+## 1.6、 重点：（请执行当前文件夹下的node.yaml把nacos的地址代理出来）
+```bash
+ ```
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
