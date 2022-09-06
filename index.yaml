@@ -11,6 +11,19 @@ entries:
     urls:
     - https://github.com/heidaodageshiwo/helm-chart/helloworld-0.1.0.tgz
     version: 0.1.0
+  nacos:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2022-09-06T16:04:10.470084222+08:00"
+    description: A Helm chart for Kubernetes
+    digest: 84aef7b43765aff50bf85fbf9083feab2a9d933565a75cd4486261d556554e79
+    maintainers:
+    - name: arrowfeng
+    - name: paderlol
+    name: nacos
+    urls:
+    - https://heidaodageshiwo.github.io/helm-chart/nacos-0.1.5.tgz
+    version: 0.1.5
   nginx:
   - annotations:
       category: Infrastructure
@@ -45,4 +58,4 @@ entries:
     urls:
     - https://github.com/heidaodageshiwo/helm-chart/test/nginx-13.1.7.tgz
     version: 13.1.7
-generated: "2022-08-29T14:15:18.822210477+08:00"
+generated: "2022-09-06T16:04:10.466832267+08:00"
