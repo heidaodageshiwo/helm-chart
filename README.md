@@ -415,14 +415,13 @@ NOTES:
 我也已经提到过了。这里就不贴了。
 
 ## 2.3、 测试：
-```bash
 
 ![image](https://user-images.githubusercontent.com/29905182/188837910-df33c779-464f-4558-a1b9-f1b4a1425888.png)
 ![image](https://user-images.githubusercontent.com/29905182/188837980-842cd77a-20c4-4e29-a371-c81eeecf040c.png)
 
 如有问题请在博客中发表评论。
 
- ```
+
  
  
   
