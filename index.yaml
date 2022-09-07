@@ -14,7 +14,7 @@ entries:
   nacos:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-09-06T16:04:10.470084222+08:00"
+    created: "2022-09-07T16:29:50.836010512+08:00"
     description: A Helm chart for Kubernetes
     digest: 84aef7b43765aff50bf85fbf9083feab2a9d933565a75cd4486261d556554e79
     maintainers:
@@ -23,6 +23,18 @@ entries:
     name: nacos
     urls:
     - https://heidaodageshiwo.github.io/helm-chart/nacos-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2022-09-07T16:29:50.845502082+08:00"
+    description: A Helm chart for Kubernetes
+    digest: 84aef7b43765aff50bf85fbf9083feab2a9d933565a75cd4486261d556554e79
+    maintainers:
+    - name: arrowfeng
+    - name: paderlol
+    name: nacos
+    urls:
+    - https://heidaodageshiwo.github.io/helm-chart/test/nacos-0.1.5.tgz
     version: 0.1.5
   nginx:
   - annotations:
@@ -58,4 +70,14 @@ entries:
     urls:
     - https://github.com/heidaodageshiwo/helm-chart/test/nginx-13.1.7.tgz
     version: 13.1.7
-generated: "2022-09-06T16:04:10.466832267+08:00"
+  seata-server:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2022-09-07T16:29:50.837803991+08:00"
+    description: Seata Server
+    digest: 56d54803e1ae8390c0268d8ac004c1ce9de53dfb65f99ae53c478d9ac194c5d0
+    name: seata-server
+    urls:
+    - https://heidaodageshiwo.github.io/helm-chart/seata-server-1.0.0.tgz
+    version: 1.0.0
+generated: "2022-09-07T16:29:50.818655991+08:00"
