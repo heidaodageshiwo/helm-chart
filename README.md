@@ -338,20 +338,103 @@ statefulset.apps/nacos   1/1     4m1s
  ![image](https://user-images.githubusercontent.com/29905182/188586592-1212f80f-4bfc-406a-af3a-7cd5f27bd157.png)
 
  
-## 1.4、 重点：（请执行当前文件夹下的node.yaml把nacos的地址代理出来）
+## 2.1、 Seata1.5.1安装
+```bash
+添加仓库
+[root@master ~]# helm repo ls
+NAME    URL                                         
+myrepo  https://heidaodageshiwo.github.io/helm-chart
+[root@master ~]# 
+
+更新仓库  pull helm包或者是直接去github下载即可
+[root@master ~]#  helm search  repo myrepo
+NAME                    CHART VERSION   APP VERSION     DESCRIPTION                                       
+myrepo/helloworld       0.1.0           1.16.0          A Helm chart for Kubernetes                       
+myrepo/nacos            0.1.5           1.0             A Helm chart for Kubernetes                       
+myrepo/nginx            13.1.7          1.23.1          NGINX Open Source is a web server that can be a...
+myrepo/seata-server     1.0.0           1.0             Seata Server  
+
+
+[root@master ~]# mkdir seatahelmtest
+[root@master ~]# cd seatahelmtest/
+[root@master seatahelmtest]# ll
+总用量 0
+[root@master seatahelmtest]# helm pull myrepo/seata-server
+[root@master seatahelmtest]# ls
+seata-server-1.0.0.tgz
+[root@master seatahelmtest]# tar -zxvf seata-server-1.0.0.tgz 
+seata-server/Chart.yaml
+seata-server/values.yaml
+seata-server/templates/NOTES.txt
+seata-server/templates/_helpers.tpl
+seata-server/templates/deployment.yaml
+seata-server/templates/service.yaml
+seata-server/templates/tests/test-connection.yaml
+seata-server/.helmignore
+seata-server/node.yaml
+seata-server/servicesss.yaml
+[root@master seatahelmtest]# ls
+seata-server  seata-server-1.0.0.tgz
+[root@master seatahelmtest]# ll
+总用量 4
+drwxr-xr-x 3 root root  119 9月   7 16:37 seata-server
+-rw-r--r-- 1 root root 2636 9月   7 16:37 seata-server-1.0.0.tgz
+[root@master seatahelmtest]# ls
+seata-server  seata-server-1.0.0.tgz
+[root@master seatahelmtest]# helm install seata ./seata-server
+NAME: seata
+LAST DEPLOYED: Wed Sep  7 16:39:17 2022
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+NOTES:
+1. Get the application URL by running these commands:
+  export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services seata-seata-server)
+  export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+  echo http://$NODE_IP:$NODE_PORT
+[root@master seatahelmtest]# 
+
+ ```
+ 
+## 2.2、 在安装之前需要注意几点（如果说你们按照官网的部署方式能够把8091端口代理出来也不用参考我这个了）
+```bash
+1.首先把代理的配置文件给挂载出来。我是用的是nfs： https://blog.csdn.net/hunheidaode/article/details/126623672  
+2.需要修改values.yaml里面的ip地址：我的是192.168.56.211
+3.我是用的是mysql5.7  mysql8的一直报错
+4.可以安装了
+ ```
+ 界面访问  ip:31005  seata可视化界面：
+ ![image](https://user-images.githubusercontent.com/29905182/188834943-a4dc675c-8a04-44f0-8cd6-914b010e8a68.png)
+![image](https://user-images.githubusercontent.com/29905182/188835012-ad33cc2a-19f9-4b9f-bd34-8d5952c5312f.png)
+
+需要注意这个ip与端口
+![image](https://user-images.githubusercontent.com/29905182/188835182-fb293db0-b767-43d5-b906-c4f83e100fef.png)
+![image](https://user-images.githubusercontent.com/29905182/188835260-84386d66-04e5-4d74-b5b0-1596adde676d.png)
+地址要一样即可。
+代码的连接方式在博客中：https://blog.csdn.net/hunheidaode/article/details/126623672 
+我也已经提到过了。这里就不贴了。
+
+## 2.3、 测试：
+```bash
+![image](https://user-images.githubusercontent.com/29905182/188835763-19fe60ae-22fa-42c1-86c1-45ff912e4c4e.png)
+![image](https://user-images.githubusercontent.com/29905182/188835968-fb8004b4-9b82-4b28-9edf-429c648ed9d6.png)
+如有问题请在博客中发表评论。
+
+ ```
+ 
+ 
+  
+## 2.4、 
 ```bash
  ```
  
-## 1.5、 重点：（请执行当前文件夹下的node.yaml把nacos的地址代理出来）
+## 2.5、
 ```bash
  ```
  
-## 1.6、 重点：（请执行当前文件夹下的node.yaml把nacos的地址代理出来）
+## 2.6、 
 ```bash
  ```
- 
- 
- 
  
  
  
