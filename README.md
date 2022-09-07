@@ -416,8 +416,10 @@ NOTES:
 
 ## 2.3、 测试：
 ```bash
-![image](https://user-images.githubusercontent.com/29905182/188835763-19fe60ae-22fa-42c1-86c1-45ff912e4c4e.png)
-![image](https://user-images.githubusercontent.com/29905182/188835968-fb8004b4-9b82-4b28-9edf-429c648ed9d6.png)
+
+![image](https://user-images.githubusercontent.com/29905182/188837910-df33c779-464f-4558-a1b9-f1b4a1425888.png)
+![image](https://user-images.githubusercontent.com/29905182/188837980-842cd77a-20c4-4e29-a371-c81eeecf040c.png)
+
 如有问题请在博客中发表评论。
 
  ```
